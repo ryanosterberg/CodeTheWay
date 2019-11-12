@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,5 +25,6 @@ textarea {
 }
 
 .navbar {
-    background-color: #00ABF9;
+    background-color: #01303F;
+    font-family: 'Nanum Gothic', sans-serif;
 }
