@@ -10,7 +10,7 @@ namespace CodeTheWay.Models
     {
         [Key]
         public int Id { get; set; }
-        public string? Company { get; set; }
+        public string Company { get; set; }
         public string Offerings { get; set; }
     }
 }

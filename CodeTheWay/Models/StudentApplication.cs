@@ -18,8 +18,8 @@ namespace CodeTheWay.Models
         public bool WindowsLaptop { get; set; }
         public bool CSAComplete { get; set; }
         public bool PresentAllClassDates { get; set; }
-        public string? MissedClassDates { get; set; }
+        public string MissedClassDates { get; set; }
         public bool PresentAllSeasonDates { get; set; }
-        public string? MissedSeasonDates { get; set; }
+        public string MissedSeasonDates { get; set; }
     }
 }
