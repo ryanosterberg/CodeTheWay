@@ -26,5 +26,11 @@ namespace CodeTheWay.Controllers
 
             return View();
         }
+        public ActionResult GetInvolved()
+        {
+            ViewBag.Message = "Find out how to get involved with our organization.";
+
+            return View();
+        }
     }
 }

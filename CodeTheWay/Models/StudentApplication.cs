@@ -17,10 +17,9 @@ namespace CodeTheWay.Models
         public DateTime EstGradDate { get; set; }
         public bool WindowsLaptop { get; set; }
         public bool CSAComplete { get; set; }
-        //bool? IBCSAComplete { get; set; } should be covered by APCSA cause its equivalent class, so generalize?
         public bool PresentAllClassDates { get; set; }
-        public List<DateTime>? MissedClassDates { get; set; }
+        public string? MissedClassDates { get; set; }
         public bool PresentAllSeasonDates { get; set; }
-        public List<DateTime>? MissedSeasonDates { get; set; }
+        public string? MissedSeasonDates { get; set; }
     }
 }
