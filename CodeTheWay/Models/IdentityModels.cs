@@ -33,5 +33,7 @@ namespace CodeTheWay.Models
         public System.Data.Entity.DbSet<CodeTheWay.Models.StudentApplication> StudentApplications { get; set; }
 
         public System.Data.Entity.DbSet<CodeTheWay.Models.NPOApplication> NPOApplications { get; set; }
+
+        public System.Data.Entity.DbSet<CodeTheWay.Models.Donor> Donors { get; set; }
     }
 }
