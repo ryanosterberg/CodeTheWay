@@ -1,0 +1,114 @@
+﻿@model CodeTheWay.Models.NPOApplication
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NPOApplication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantPosition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantPosition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NPOMission)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NPOMission)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NPOVision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NPOVision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProblemsAndDesires)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProblemsAndDesires)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
