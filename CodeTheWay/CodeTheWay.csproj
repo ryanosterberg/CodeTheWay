@@ -172,6 +172,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FacilitiesTechDonorController.cs" />
     <Compile Include="Controllers\FinancialDonorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -196,6 +197,10 @@
     <Compile Include="Migrations\201911140259245_FinancialDonor.cs" />
     <Compile Include="Migrations\201911140259245_FinancialDonor.Designer.cs">
       <DependentUpon>201911140259245_FinancialDonor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911140300274_FacilitiesTechDonor.cs" />
+    <Compile Include="Migrations\201911140300274_FacilitiesTechDonor.Designer.cs">
+      <DependentUpon>201911140300274_FacilitiesTechDonor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -328,6 +333,11 @@
     <Content Include="Views\FinancialDonors\Details.cshtml" />
     <Content Include="Views\FinancialDonors\Edit.cshtml" />
     <Content Include="Views\FinancialDonors\Index.cshtml" />
+    <Content Include="Views\FacilitiesTechDonor\Create.cshtml" />
+    <Content Include="Views\FacilitiesTechDonor\Delete.cshtml" />
+    <Content Include="Views\FacilitiesTechDonor\Details.cshtml" />
+    <Content Include="Views\FacilitiesTechDonor\Edit.cshtml" />
+    <Content Include="Views\FacilitiesTechDonor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -355,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911140259245_FinancialDonor.resx">
       <DependentUpon>201911140259245_FinancialDonor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911140300274_FacilitiesTechDonor.resx">
+      <DependentUpon>201911140300274_FacilitiesTechDonor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

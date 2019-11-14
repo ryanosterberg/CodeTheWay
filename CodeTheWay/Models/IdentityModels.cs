@@ -38,5 +38,7 @@ namespace CodeTheWay.Models
 
         object placeHolderVariable;
         public System.Data.Entity.DbSet<CodeTheWay.Models.FinancialDonor> FinancialDonors { get; set; }
+
+        public System.Data.Entity.DbSet<CodeTheWay.Models.FacilitiesTechDonor> FacilitiesTechDonors { get; set; }
     }
 }
