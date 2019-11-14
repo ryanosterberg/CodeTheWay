@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CodeTheWay.Models
 {
-    public abstract class Donor
+    public class Donor
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
