@@ -172,7 +172,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NPOApplicationController.cs" />
@@ -187,14 +186,6 @@
     <Compile Include="Migrations\201911140215519_NPOApplication.cs" />
     <Compile Include="Migrations\201911140215519_NPOApplication.Designer.cs">
       <DependentUpon>201911140215519_NPOApplication.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911140230264_updateDonor.cs" />
-    <Compile Include="Migrations\201911140230264_updateDonor.Designer.cs">
-      <DependentUpon>201911140230264_updateDonor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911140231074_Donor.cs" />
-    <Compile Include="Migrations\201911140231074_Donor.Designer.cs">
-      <DependentUpon>201911140231074_Donor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -317,11 +308,6 @@
     <Content Include="Views\NPOApplication\Details.cshtml" />
     <Content Include="Views\NPOApplication\Edit.cshtml" />
     <Content Include="Views\NPOApplication\Index.cshtml" />
-    <Content Include="Views\Donor\Create.cshtml" />
-    <Content Include="Views\Donor\Delete.cshtml" />
-    <Content Include="Views\Donor\Details.cshtml" />
-    <Content Include="Views\Donor\Edit.cshtml" />
-    <Content Include="Views\Donor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -343,12 +329,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911140215519_NPOApplication.resx">
       <DependentUpon>201911140215519_NPOApplication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911140230264_updateDonor.resx">
-      <DependentUpon>201911140230264_updateDonor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911140231074_Donor.resx">
-      <DependentUpon>201911140231074_Donor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
