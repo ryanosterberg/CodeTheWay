@@ -46,7 +46,7 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,Accomplishments,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,Accomplishments,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
         {
             if (ModelState.IsValid)
             {
