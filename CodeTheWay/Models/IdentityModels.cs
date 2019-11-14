@@ -35,5 +35,8 @@ namespace CodeTheWay.Models
         public System.Data.Entity.DbSet<CodeTheWay.Models.NPOApplication> NPOApplications { get; set; }
 
         public System.Data.Entity.DbSet<CodeTheWay.Models.VolunteerDonor> VolunteerDonors { get; set; }
+
+        object placeHolderVariable;
+        public System.Data.Entity.DbSet<CodeTheWay.Models.FinancialDonor> FinancialDonors { get; set; }
     }
 }
