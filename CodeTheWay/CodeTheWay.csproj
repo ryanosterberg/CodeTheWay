@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NPOApplicationController.cs" />
     <Compile Include="Controllers\StudentApplicationController.cs" />
+    <Compile Include="Controllers\VolunteerDonorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,6 +187,10 @@
     <Compile Include="Migrations\201911140215519_NPOApplication.cs" />
     <Compile Include="Migrations\201911140215519_NPOApplication.Designer.cs">
       <DependentUpon>201911140215519_NPOApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911140253513_VolunteerDonor.cs" />
+    <Compile Include="Migrations\201911140253513_VolunteerDonor.Designer.cs">
+      <DependentUpon>201911140253513_VolunteerDonor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -308,6 +313,11 @@
     <Content Include="Views\NPOApplication\Details.cshtml" />
     <Content Include="Views\NPOApplication\Edit.cshtml" />
     <Content Include="Views\NPOApplication\Index.cshtml" />
+    <Content Include="Views\VolunteerDonor\Create.cshtml" />
+    <Content Include="Views\VolunteerDonor\Delete.cshtml" />
+    <Content Include="Views\VolunteerDonor\Details.cshtml" />
+    <Content Include="Views\VolunteerDonor\Edit.cshtml" />
+    <Content Include="Views\VolunteerDonor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911140215519_NPOApplication.resx">
       <DependentUpon>201911140215519_NPOApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911140253513_VolunteerDonor.resx">
+      <DependentUpon>201911140253513_VolunteerDonor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
