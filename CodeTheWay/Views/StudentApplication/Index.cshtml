@@ -1,0 +1,93 @@
+﻿@model IEnumerable<CodeTheWay.Models.StudentApplication>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighSchool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstGradDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WindowsLaptop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CSAComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PresentAllClassDates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MissedClassDates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PresentAllSeasonDates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MissedSeasonDates)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighSchool)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstGradDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WindowsLaptop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CSAComplete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PresentAllClassDates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MissedClassDates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PresentAllSeasonDates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MissedSeasonDates)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

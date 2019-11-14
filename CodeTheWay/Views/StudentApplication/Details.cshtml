@@ -1,0 +1,106 @@
+﻿@model CodeTheWay.Models.StudentApplication
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentApplication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HighSchool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HighSchool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstGradDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstGradDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WindowsLaptop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WindowsLaptop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CSAComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CSAComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentAllClassDates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentAllClassDates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MissedClassDates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MissedClassDates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentAllSeasonDates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentAllSeasonDates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MissedSeasonDates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MissedSeasonDates)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

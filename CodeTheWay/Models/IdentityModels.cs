@@ -29,5 +29,7 @@ namespace CodeTheWay.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CodeTheWay.Models.StudentApplication> StudentApplications { get; set; }
     }
 }
