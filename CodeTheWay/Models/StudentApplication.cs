@@ -17,6 +17,7 @@ namespace CodeTheWay.Models
         [DisplayName("Last Name")]
         [Required]
         public string LastName { get; set; }
+        [DataType(DataType.EmailAddress)]
         [Required]
         //[RegularExpression(@"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
@@ -24,6 +25,7 @@ namespace CodeTheWay.Models
         [Required]
         public string HighSchool { get; set; }
         [DisplayName("Estimated Graduation Date")]
+        [DataType(DataType.Date)]
         [Required]
         public DateTime EstGradDate { get; set; }
         [DisplayName("Do you have a Windows Laptop?")]
@@ -31,6 +33,7 @@ namespace CodeTheWay.Models
         [DisplayName("Have you completed AP Computer Science or equivalent?")]
         public bool CSAComplete { get; set; }
         [DisplayName("If not, please detail the computer science classes you have taken and your computer programming experiences")]
+        [DataType(DataType.MultilineText)]
         public string Accomplishments { get; set; }
         [DisplayName("Will you be here for all days of the Master Class?")]
         public bool PresentAllClassDates { get; set; }
