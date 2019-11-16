@@ -29,7 +29,6 @@ namespace CodeTheWay.Models
         public string HighSchool { get; set; }
 
         [DisplayName("Estimated Graduation Date")]
-        [DataType(DataType.Date)]
         [Required]
         public DateTime EstGradDate { get; set; }
 
