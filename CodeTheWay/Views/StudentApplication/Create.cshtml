@@ -50,7 +50,7 @@
         <div class="form-group col-md-6">
             <div class="form-check">
                 @Html.EditorFor(model => model.WindowsLaptop, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.WindowsLaptop, new { @class = "form-check-label" })
+                @Html.LabelFor(model => model.WindowsLaptop, "Do you have a Windows Laptop?",  new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.WindowsLaptop, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -58,14 +58,14 @@
         <div class="form-group col-md-6">
             <div class="form-check">
                 @Html.EditorFor(model => model.CSAComplete, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.CSAComplete, new { @class = "form-check-label" })
+                @Html.LabelFor(model => model.CSAComplete, "Have you completed AP Computer Science or equivalent?", new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.CSAComplete, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Accomplishments)
+        @Html.LabelFor(model => model.Accomplishments, "If not, please detail the computer science classes you have taken and your computer programming experiences")
         @Html.EditorFor(model => model.Accomplishments, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Accomplishments, "", new { @class = "text-danger" })
     </div>
@@ -77,13 +77,13 @@
         <div class="form-group col-md-5">
             <div class="form-check">
                 @Html.EditorFor(model => model.PresentAllClassDates, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.PresentAllClassDates, new { @class = "form-check-label" })
+                @Html.LabelFor(model => model.PresentAllClassDates, "Will you be here for all days of the Master Class?", new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.PresentAllClassDates, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group col-md-7">
-            @Html.LabelFor(model => model.MissedClassDates)
+            @Html.LabelFor(model => model.MissedClassDates, "If not, list all missed class days")
             @Html.EditorFor(model => model.MissedClassDates, new { htmlAttributes = new { @class = "form-control" } })
             <small class="form-text text-muted">Format is mm/dd, mm/dd, mm/dd...</small>
             @Html.ValidationMessageFor(model => model.MissedClassDates, "", new { @class = "text-danger" })
@@ -97,13 +97,13 @@
         <div class="form-group col-md-5">
             <div class="form-check">
                 @Html.EditorFor(model => model.PresentAllSeasonDates, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.PresentAllSeasonDates, new { @class = "form-check-label" })
+                @Html.LabelFor(model => model.PresentAllSeasonDates, "Will you be here for all days of the Project Season?", new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.PresentAllSeasonDates, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group col-md-7">
-            @Html.LabelFor(model => model.MissedSeasonDates)
+            @Html.LabelFor(model => model.MissedSeasonDates, "If not, list all missed season days")
             @Html.EditorFor(model => model.MissedSeasonDates, new { htmlAttributes = new { @class = "form-control" } })
             <small class="form-text text-muted">Format is mm/dd, mm/dd, mm/dd...</small>
             @Html.ValidationMessageFor(model => model.MissedSeasonDates, "", new { @class = "text-danger" })

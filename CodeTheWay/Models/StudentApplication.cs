@@ -33,26 +33,25 @@ namespace CodeTheWay.Models
         [Required]
         public DateTime EstGradDate { get; set; }
 
-        [DisplayName("Do you have a Windows Laptop?")]
+        [DisplayName("Windows Laptop?")]
         public bool WindowsLaptop { get; set; }
 
-        [DisplayName("Have you completed AP Computer Science or equivalent?")]
+        [DisplayName("CSA Complete?")]
         public bool CSAComplete { get; set; }
 
-        [DisplayName("If not, please detail the computer science classes you have taken and your computer programming experiences")]
         [DataType(DataType.MultilineText)]
         public string Accomplishments { get; set; }
 
-        [DisplayName("Will you be here for all days of the Master Class?")]
+        [DisplayName("Present all class dates?")]
         public bool PresentAllClassDates { get; set; }
 
-        [DisplayName("If not, list all missed class days")]
+        [DisplayName("Missed class dates")]
         public string MissedClassDates { get; set; }
 
-        [DisplayName("Will you be here for all days of the Project Season?")]
+        [DisplayName("Present all season dates?")]
         public bool PresentAllSeasonDates { get; set; }
 
-        [DisplayName("If not, list all missed season days")]
+        [DisplayName("Missed season dates")]
         public string MissedSeasonDates { get; set; }
     }
 }
