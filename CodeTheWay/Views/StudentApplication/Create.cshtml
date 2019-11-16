@@ -50,7 +50,7 @@
         <div class="form-group col-md-6">
             <div class="form-check">
                 @Html.EditorFor(model => model.WindowsLaptop, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.WindowsLaptop, new { htmlAttributes = new { @class = "form-check-label" } })
+                @Html.LabelFor(model => model.WindowsLaptop, new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.WindowsLaptop, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -58,7 +58,7 @@
         <div class="form-group col-md-6">
             <div class="form-check">
                 @Html.EditorFor(model => model.CSAComplete, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.CSAComplete, new { htmlAttributes = new { @class = "form-check-label" } })
+                @Html.LabelFor(model => model.CSAComplete, new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.CSAComplete, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -77,7 +77,7 @@
         <div class="form-group col-md-5">
             <div class="form-check">
                 @Html.EditorFor(model => model.PresentAllClassDates, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.PresentAllClassDates, new { htmlAttributes = new { @class = "form-check-label" } })
+                @Html.LabelFor(model => model.PresentAllClassDates, new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.PresentAllClassDates, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -97,7 +97,7 @@
         <div class="form-group col-md-5">
             <div class="form-check">
                 @Html.EditorFor(model => model.PresentAllSeasonDates, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.PresentAllSeasonDates, new { htmlAttributes = new { @class = "form-check-label" } })
+                @Html.LabelFor(model => model.PresentAllSeasonDates, new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.PresentAllSeasonDates, "", new { @class = "text-danger" })
             </div>
         </div>
