@@ -344,6 +344,7 @@
     <Content Include="Views\StudentApplication\Details.cshtml" />
     <Content Include="Views\StudentApplication\Edit.cshtml" />
     <Content Include="Views\StudentApplication\Index.cshtml" />
+    <Content Include="Views\Home\Donor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

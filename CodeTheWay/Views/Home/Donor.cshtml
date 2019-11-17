@@ -1,0 +1,80 @@
+﻿@model CodeTheWay.Models.Donor
+@{
+    ViewBag.Title = "Donor";
+}
+
+<h2>Donor</h2>
+
+@using (Html.BeginForm("Create", "FinancialDonors"))
+{
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.LastName)
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-9">
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-3">
+            <label for="DonorType">Donor Type</label>
+            <select class="form-control" id="DonorType" onchange="switchPost(this.options[this.selectedIndex].text)">
+                <option>Financial</option>
+                <option>Facilities</option>
+                <option>Volunteer</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group" id="dynamicForm">
+        <p id="standard">this is standard</p>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+}
+<p id="financial">fin</p>
+<p id="facilities">fac</p>
+<p id="volunteer">vol</p>
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+
+<script type="text/javascript">
+    var form = document.querySelector('form');
+    // TODO: Figure out how to move the form content out of the form and then move new content in
+    function switchPost(name) {
+        var curForm = document.querySelector('form').querySelector('p');
+        //console.log(document.querySelector('form').querySelector('p').id);
+        switch (name) {
+            case 'Financial':
+                console.info(name);
+                break;
+            case 'Facilities':
+                console.info(name);
+                break;
+            case 'Volunteer':
+                console.info(name);
+                break;
+            default:
+                console.error("nah bruh");
+                break;
+        }
+    }
+
+    function moveTo(startElt, endElt) {
+
+    }
+</script>
