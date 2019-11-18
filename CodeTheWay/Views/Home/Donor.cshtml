@@ -37,16 +37,25 @@
     </div>
 
     <div class="form-group" id="dynamicForm">
-        <p id="standard">this is standard</p>
+
     </div>
 
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
 }
-<p id="financial">fin</p>
-<p id="facilities">fac</p>
-<p id="volunteer">vol</p>
+<div id="Financial" hidden>
+    <h1>He</h1>
+    <p>fin</p>
+</div>
+<div id="Facilities" hidden>
+    <h1>She</h1>
+    <p>fac</p>
+</div>
+<div id="Volunteer" hidden>
+    <h1>They</h1>
+    <p>vol</p>
+</div>
 
 <div>
     @Html.ActionLink("Back to Home", "Index")
@@ -55,26 +64,16 @@
 <script type="text/javascript">
     var form = document.querySelector('form');
     // TODO: Figure out how to move the form content out of the form and then move new content in
+
     function switchPost(name) {
-        var curForm = document.querySelector('form').querySelector('p');
-        //console.log(document.querySelector('form').querySelector('p').id);
-        switch (name) {
-            case 'Financial':
-                console.info(name);
-                break;
-            case 'Facilities':
-                console.info(name);
-                break;
-            case 'Volunteer':
-                console.info(name);
-                break;
-            default:
-                console.error("nah bruh");
-                break;
-        }
+        var curForm = form.querySelector('#dynamicForm');
+        console.info(name);
+        //append(curForm.innerHTML);
+        curForm.innerHTML = document.documentElement.querySelector(`#${name}`).innerHTML;
+        form.action = `/${name}Donor/Create`
     }
 
-    function moveTo(startElt, endElt) {
-
+    function append(str) {
+        document.documentElement.insertAdjacentHTML('beforeend', str);
     }
 </script>
