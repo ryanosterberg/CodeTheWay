@@ -46,7 +46,7 @@ namespace CodeTheWay.Models
         [Phone]
         public string ApplicantPhone { get; set; }
 
-        [DisplayName("Misson")]
+        [DisplayName("Mission")]
         [Required]
         public string NPOMission { get; set; }
 
