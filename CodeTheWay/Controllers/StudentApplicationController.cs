@@ -7,17 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
+using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
     public class StudentApplicationController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private StudentApplicationService service = new StudentApplicationService();
 
         // GET: StudentApplication
         public ActionResult Index()
         {
-            return View(db.StudentApplications.ToList());
+            return View(service.GetAllStudentApplications());
         }
 
         // GET: StudentApplication/Details/5
@@ -27,7 +28,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentApplication studentApplication = db.StudentApplications.Find(id);
+            StudentApplication studentApplication = service.GetStudentApplicationById((int)id);
             if (studentApplication == null)
             {
                 return HttpNotFound();
@@ -46,12 +47,11 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,Accomplishments,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
         {
             if (ModelState.IsValid)
             {
-                db.StudentApplications.Add(studentApplication);
-                db.SaveChanges();
+                service.Add(studentApplication);
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +65,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentApplication studentApplication = db.StudentApplications.Find(id);
+            StudentApplication studentApplication = service.GetStudentApplicationById((int)id);
             if (studentApplication == null)
             {
                 return HttpNotFound();
@@ -78,12 +78,11 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,Accomplishments,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(studentApplication).State = EntityState.Modified;
-                db.SaveChanges();
+                service.Edit(studentApplication);
                 return RedirectToAction("Index");
             }
             return View(studentApplication);
@@ -96,7 +95,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentApplication studentApplication = db.StudentApplications.Find(id);
+            StudentApplication studentApplication = service.GetStudentApplicationById((int)id);
             if (studentApplication == null)
             {
                 return HttpNotFound();
@@ -109,19 +108,8 @@ namespace CodeTheWay.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            StudentApplication studentApplication = db.StudentApplications.Find(id);
-            db.StudentApplications.Remove(studentApplication);
-            db.SaveChanges();
+            service.Delete(service.GetStudentApplicationById(id));
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
