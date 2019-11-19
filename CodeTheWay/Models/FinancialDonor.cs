@@ -27,12 +27,21 @@ namespace CodeTheWay.Models
         /// <summary>
         /// An enum that represents how often payments are scheduled.
         /// </summary>
-        public enum Frequency { BIANNUAL, WEEKLY, MONTHLY, YEARLY, ONCE }
+        public enum Frequency
+        {
+            [Display(Name = "Biannual")] BIANNUAL,
+            [Display(Name = "Weekly")] WEEKLY,
+            [Display(Name = "Monthly")] MONTHLY,
+            [Display(Name = "Yearly")] YEARLY,
+            [Display(Name = "Once")] ONCE
+        }
 
         [DisplayName("Estimated Amount")]
+        [DataType(DataType.Currency)]
         [Required]
         public double EstAmt { get; set; }
 
+        [DisplayName("Current Frequency")]
         public Frequency CurrentFrequency { get; set; }
     }
 }
