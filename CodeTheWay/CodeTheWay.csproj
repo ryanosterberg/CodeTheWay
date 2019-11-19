@@ -322,11 +322,6 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\GetInvolved.cshtml" />
-    <Content Include="Views\NPOApplication\Create.cshtml" />
-    <Content Include="Views\NPOApplication\Delete.cshtml" />
-    <Content Include="Views\NPOApplication\Details.cshtml" />
-    <Content Include="Views\NPOApplication\Edit.cshtml" />
-    <Content Include="Views\NPOApplication\Index.cshtml" />
     <Content Include="Views\VolunteerDonor\Create.cshtml" />
     <Content Include="Views\VolunteerDonor\Delete.cshtml" />
     <Content Include="Views\VolunteerDonor\Details.cshtml" />
@@ -347,6 +342,11 @@
     <Content Include="Views\FinancialDonor\Details.cshtml" />
     <Content Include="Views\FinancialDonor\Edit.cshtml" />
     <Content Include="Views\FinancialDonor\Index.cshtml" />
+    <Content Include="Views\NPOApplication\Create.cshtml" />
+    <Content Include="Views\NPOApplication\Delete.cshtml" />
+    <Content Include="Views\NPOApplication\Details.cshtml" />
+    <Content Include="Views\NPOApplication\Edit.cshtml" />
+    <Content Include="Views\NPOApplication\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
