@@ -206,6 +206,10 @@
     <Compile Include="Migrations\201911141908125_Accomplishments.Designer.cs">
       <DependentUpon>201911141908125_Accomplishments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911191751433_nameSeparation.cs" />
+    <Compile Include="Migrations\201911191751433_nameSeparation.Designer.cs">
+      <DependentUpon>201911191751433_nameSeparation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Donor.cs" />
@@ -377,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141908125_Accomplishments.resx">
       <DependentUpon>201911141908125_Accomplishments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911191751433_nameSeparation.resx">
+      <DependentUpon>201911191751433_nameSeparation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
