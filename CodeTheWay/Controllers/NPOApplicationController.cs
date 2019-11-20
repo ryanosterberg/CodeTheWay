@@ -7,17 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
+using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
     public class NPOApplicationController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private NPOApplicationService service = new NPOApplicationService();
 
         // GET: NPOApplication
         public ActionResult Index()
         {
-            return View(db.NPOApplications.ToList());
+            return View(service.GetAllNPOApplications());
         }
 
         // GET: NPOApplication/Details/5
@@ -27,7 +28,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NPOApplication nPOApplication = db.NPOApplications.Find(id);
+            NPOApplication nPOApplication = service.GetNPOApplicationById((int) id);
             if (nPOApplication == null)
             {
                 return HttpNotFound();
@@ -50,8 +51,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.NPOApplications.Add(nPOApplication);
-                db.SaveChanges();
+                service.Add(nPOApplication);
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +65,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NPOApplication nPOApplication = db.NPOApplications.Find(id);
+            NPOApplication nPOApplication = service.GetNPOApplicationById((int)id);
             if (nPOApplication == null)
             {
                 return HttpNotFound();
@@ -82,8 +82,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nPOApplication).State = EntityState.Modified;
-                db.SaveChanges();
+                service.Edit(nPOApplication);
                 return RedirectToAction("Index");
             }
             return View(nPOApplication);
@@ -96,7 +95,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NPOApplication nPOApplication = db.NPOApplications.Find(id);
+            NPOApplication nPOApplication = service.GetNPOApplicationById((int)id);
             if (nPOApplication == null)
             {
                 return HttpNotFound();
@@ -109,19 +108,9 @@ namespace CodeTheWay.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            NPOApplication nPOApplication = db.NPOApplications.Find(id);
-            db.NPOApplications.Remove(nPOApplication);
-            db.SaveChanges();
+            NPOApplication nPOApplication = service.GetNPOApplicationById((int)id);
+            service.Delete(service.GetNPOApplicationById((int)id));
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
