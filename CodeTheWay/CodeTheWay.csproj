@@ -173,7 +173,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FacilitiesTechDonorController.cs" />
-    <Compile Include="Controllers\FinancialDonorsController.cs" />
+    <Compile Include="Controllers\FinancialDonorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NPOApplicationController.cs" />
@@ -206,9 +206,12 @@
     <Compile Include="Migrations\201911141908125_Accomplishments.Designer.cs">
       <DependentUpon>201911141908125_Accomplishments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911191751433_nameSeparation.cs" />
+    <Compile Include="Migrations\201911191751433_nameSeparation.Designer.cs">
+      <DependentUpon>201911191751433_nameSeparation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\FacilitiesTechDonor.cs" />
     <Compile Include="Models\FinancialDonor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -320,21 +323,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\GetInvolved.cshtml" />
-    <Content Include="Views\NPOApplication\Create.cshtml" />
-    <Content Include="Views\NPOApplication\Delete.cshtml" />
-    <Content Include="Views\NPOApplication\Details.cshtml" />
-    <Content Include="Views\NPOApplication\Edit.cshtml" />
-    <Content Include="Views\NPOApplication\Index.cshtml" />
     <Content Include="Views\VolunteerDonor\Create.cshtml" />
     <Content Include="Views\VolunteerDonor\Delete.cshtml" />
     <Content Include="Views\VolunteerDonor\Details.cshtml" />
     <Content Include="Views\VolunteerDonor\Edit.cshtml" />
     <Content Include="Views\VolunteerDonor\Index.cshtml" />
-    <Content Include="Views\FinancialDonors\Create.cshtml" />
-    <Content Include="Views\FinancialDonors\Delete.cshtml" />
-    <Content Include="Views\FinancialDonors\Details.cshtml" />
-    <Content Include="Views\FinancialDonors\Edit.cshtml" />
-    <Content Include="Views\FinancialDonors\Index.cshtml" />
     <Content Include="Views\FacilitiesTechDonor\Create.cshtml" />
     <Content Include="Views\FacilitiesTechDonor\Delete.cshtml" />
     <Content Include="Views\FacilitiesTechDonor\Details.cshtml" />
@@ -345,6 +338,16 @@
     <Content Include="Views\StudentApplication\Details.cshtml" />
     <Content Include="Views\StudentApplication\Edit.cshtml" />
     <Content Include="Views\StudentApplication\Index.cshtml" />
+    <Content Include="Views\FinancialDonor\Create.cshtml" />
+    <Content Include="Views\FinancialDonor\Delete.cshtml" />
+    <Content Include="Views\FinancialDonor\Details.cshtml" />
+    <Content Include="Views\FinancialDonor\Edit.cshtml" />
+    <Content Include="Views\FinancialDonor\Index.cshtml" />
+    <Content Include="Views\NPOApplication\Create.cshtml" />
+    <Content Include="Views\NPOApplication\Delete.cshtml" />
+    <Content Include="Views\NPOApplication\Details.cshtml" />
+    <Content Include="Views\NPOApplication\Edit.cshtml" />
+    <Content Include="Views\NPOApplication\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911141908125_Accomplishments.resx">
       <DependentUpon>201911141908125_Accomplishments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911191751433_nameSeparation.resx">
+      <DependentUpon>201911191751433_nameSeparation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
