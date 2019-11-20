@@ -32,5 +32,10 @@ namespace CodeTheWay.Controllers
 
             return View();
         }
+
+        public ActionResult Donor()
+        {
+            return View();
+        }
     }
 }
