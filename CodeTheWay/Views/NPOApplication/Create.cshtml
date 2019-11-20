@@ -40,15 +40,15 @@
     <h3>Applicant Information</h3>
     <hr />
     <div class="form-row">
-        <!--<div class="form-group col-md-6">
-            @Html.LabelFor(model => model.ApplicantName)
-            @Html.EditorFor(model => model.ApplicantName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ApplicantName, "", new { @class = "text-danger" })
-        </div>-->
-        <div class="form-group col-md-12">
-            @Html.LabelFor(model => model.ApplicantName)
-            @Html.EditorFor(model => model.ApplicantName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ApplicantName, "", new { @class = "text-danger" })
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.ApplicantFirstName)
+            @Html.EditorFor(model => model.ApplicantFirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ApplicantFirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.ApplicantLastName)
+            @Html.EditorFor(model => model.ApplicantLastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ApplicantLastName, "", new { @class = "text-danger" })
         </div>
     </div>
 
