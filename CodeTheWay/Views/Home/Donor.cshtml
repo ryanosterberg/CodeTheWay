@@ -8,6 +8,9 @@
 <hr />
 @using (Html.BeginForm("Create", "FinancialDonor"))
 {
+
+    @Html.AntiForgeryToken()
+
     <div class="form-row">
         <div class="form-group col-md-6">
             @Html.Label("FirstName", "First Name")
