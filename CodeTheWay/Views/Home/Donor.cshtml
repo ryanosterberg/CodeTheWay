@@ -6,7 +6,7 @@
 <hr />
 <h3>Contact Info</h3>
 <hr />
-@using (Html.BeginForm("Create", "FinancialDonors"))
+@using (Html.BeginForm("Create", "FinancialDonor"))
 {
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -55,15 +55,10 @@
             @Html.ValidationMessage("EstAmt", "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-6">
-            @Html.Label("CurrentFrequency", "Current Frequency")
-            <select class="form-control" data-val-required="The Current Frequency field is required." id="CurrentFrequency" name="CurrentFrequency">
-                <option selected="selected" value="0">Biannual</option>
-                <option value="1">Weekly</option>
-                <option value="2">Monthly</option>
-                <option value="3">Yearly</option>
-                <option value="4">Once</option>
-            </select>
-            @Html.ValidationMessage("CurrentFrequency", "", new { @class = "text-danger" })
+            @model CodeTheWay.Models.FinancialDonor
+            @Html.LabelFor(model => model.CurrentFrequency)
+            @Html.EnumDropDownListFor(model => model.CurrentFrequency, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CurrentFrequency, "", new { @class = "text-danger" })
         </div>
     </div>
 </div>
@@ -109,6 +104,6 @@
         if (name == "") return;
         let curForm = form.querySelector('#dynamicForm');
         curForm.innerHTML = document.documentElement.querySelector(`#${name}`).innerHTML;
-        form.action = `/${name}Donor/Create`
+        form.action = `/${name == "Facilities" ? "FacilitiesTech" : name}Donor/Create`
     }
 </script>
