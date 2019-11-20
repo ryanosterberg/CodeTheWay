@@ -18,7 +18,7 @@ namespace CodeTheWay.Controllers
         // GET: NPOApplication
         public ActionResult Index()
         {
-            return View(service.GetNPOApplications());
+            return View(service.GetAllNPOApplications());
         }
 
         // GET: NPOApplication/Details/5

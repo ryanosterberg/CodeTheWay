@@ -11,7 +11,7 @@ namespace CodeTheWay.Repositories
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public List<NPOApplication> GetNPOApplications()
+        public List<NPOApplication> GetAllNPOApplications()
         {
             return db.NPOApplications.ToList();
         }

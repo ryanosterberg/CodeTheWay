@@ -10,9 +10,9 @@ namespace CodeTheWay.Services
     public class NPOApplicationService
     {
         private NPOApplicationRepository repo = new NPOApplicationRepository();
-        public List<NPOApplication> GetNPOApplications()
+        public List<NPOApplication> GetAllNPOApplications()
         {
-            return repo.GetNPOApplications();
+            return repo.GetAllNPOApplications();
         }
 
         public NPOApplication GetNPOApplicationById(int id)
