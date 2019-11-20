@@ -1,34 +1,36 @@
-﻿@model CodeTheWay.Models.Donor
-@{
+﻿@{
     ViewBag.Title = "Donor";
 }
 
-<h2>Donor</h2>
-
+<h1>Donor Application</h1>
+<hr />
+<h3>Contact Info</h3>
+<hr />
 @using (Html.BeginForm("Create", "FinancialDonors"))
 {
     <div class="form-row">
         <div class="form-group col-md-6">
-            @Html.LabelFor(model => model.FirstName)
-            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            @Html.Label("FirstName", "First Name")
+            @Html.Editor("FirstName", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessage("FirstName", "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-6">
-            @Html.LabelFor(model => model.LastName)
-            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            @Html.Label("LastName", "Last Name")
+            @Html.Editor("LastName", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessage("LastName", "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-9">
-            @Html.LabelFor(model => model.Email)
-            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            @Html.Label("Email")
+            @Html.Editor("Email", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-3">
             <label for="DonorType">Donor Type</label>
             <select class="form-control" id="DonorType" onchange="switchPost(this.options[this.selectedIndex].text)">
+                <option selected></option>
                 <option>Financial</option>
                 <option>Facilities</option>
                 <option>Volunteer</option>
@@ -36,25 +38,64 @@
         </div>
     </div>
 
-    <div class="form-group" id="dynamicForm">
+    <div id="dynamicForm"></div>
 
-    </div>
-
-    <div class="form-group">
+    <div class="form-row form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
 }
+
 <div id="Financial" hidden>
-    <h1>He</h1>
-    <p>fin</p>
+    <h3>Financial</h3>
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("EstAmt", "Estimated Amount")
+            @Html.Editor("EstAmt", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessage("EstAmt", "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-6">
+            @Html.Label("CurrentFrequency", "Current Frequency")
+            <select class="form-control" data-val-required="The Current Frequency field is required." id="CurrentFrequency" name="CurrentFrequency">
+                <option selected="selected" value="0">Biannual</option>
+                <option value="1">Weekly</option>
+                <option value="2">Monthly</option>
+                <option value="3">Yearly</option>
+                <option value="4">Once</option>
+            </select>
+            @Html.ValidationMessage("CurrentFrequency", "", new { @class = "text-danger" })
+        </div>
+    </div>
 </div>
+
 <div id="Facilities" hidden>
-    <h1>She</h1>
-    <p>fac</p>
+    <h3>Facilities / Tech</h3>
+    <hr />
+    <div class="form-row">
+        @Html.Label("Company")
+        @Html.Editor("Company", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessage("Company", "", new { @class = "text-danger" })
+    </div>
+    <div class="form-row">
+        @Html.Label("Offerings")
+        @Html.Editor("Offerings", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessage("Offerings", "", new { @class = "text-danger" })
+    </div>
 </div>
+
 <div id="Volunteer" hidden>
-    <h1>They</h1>
-    <p>vol</p>
+    <h3>Volunteer</h3>
+    <hr />
+    <div class="form-row">
+        @Html.Label("Company")
+        @Html.Editor("Company", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessage("Company", "", new { @class = "text-danger" })
+    </div>
+    <div class="form-row">
+        @Html.Label("Offerings")
+        @Html.Editor("Offerings", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessage("Offerings", "", new { @class = "text-danger" })
+    </div>
 </div>
 
 <div>
@@ -63,12 +104,10 @@
 
 <script type="text/javascript">
     var form = document.querySelector('form');
-    // TODO: Figure out how to move the form content out of the form and then move new content in
 
     function switchPost(name) {
+        if (name == "") return;
         var curForm = form.querySelector('#dynamicForm');
-        console.info(name);
-        //append(curForm.innerHTML);
         curForm.innerHTML = document.documentElement.querySelector(`#${name}`).innerHTML;
         form.action = `/${name}Donor/Create`
     }
