@@ -46,7 +46,7 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrgName,Email,PhoneNum,Address,ApplicantName,ApplicantPosition,ApplicantEmail,ApplicantPhone,NPOMission,NPOVision,WebURL,ProblemsAndDesires")] NPOApplication nPOApplication)
+        public ActionResult Create([Bind(Include = "Id,OrgName,Email,PhoneNum,Address,ApplicantFirstName,ApplicantLastName,ApplicantPosition,ApplicantEmail,ApplicantPhone,NPOMission,NPOVision,WebURL,ProblemsAndDesires")] NPOApplication nPOApplication)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,OrgName,Email,PhoneNum,Address,ApplicantName,ApplicantPosition,ApplicantEmail,ApplicantPhone,NPOMission,NPOVision,WebURL,ProblemsAndDesires")] NPOApplication nPOApplication)
+        public ActionResult Edit([Bind(Include = "Id,OrgName,Email,PhoneNum,Address,ApplicantFirstName,ApplicantLastName,ApplicantPosition,ApplicantEmail,ApplicantPhone,NPOMission,NPOVision,WebURL,ProblemsAndDesires")] NPOApplication nPOApplication)
         {
             if (ModelState.IsValid)
             {

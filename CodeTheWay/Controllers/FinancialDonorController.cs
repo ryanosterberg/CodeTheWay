@@ -10,17 +10,17 @@ using CodeTheWay.Models;
 
 namespace CodeTheWay.Controllers
 {
-    public class FinancialDonorsController : Controller
+    public class FinancialDonorController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: FinancialDonors
+        // GET: FinancialDonor
         public ActionResult Index()
         {
             return View(db.FinancialDonors.ToList());
         }
 
-        // GET: FinancialDonors/Details/5
+        // GET: FinancialDonor/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace CodeTheWay.Controllers
             return View(financialDonor);
         }
 
-        // GET: FinancialDonors/Create
+        // GET: FinancialDonor/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: FinancialDonors/Create
+        // POST: FinancialDonor/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace CodeTheWay.Controllers
             return View(financialDonor);
         }
 
-        // GET: FinancialDonors/Edit/5
+        // GET: FinancialDonor/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace CodeTheWay.Controllers
             return View(financialDonor);
         }
 
-        // POST: FinancialDonors/Edit/5
+        // POST: FinancialDonor/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace CodeTheWay.Controllers
             return View(financialDonor);
         }
 
-        // GET: FinancialDonors/Delete/5
+        // GET: FinancialDonor/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace CodeTheWay.Controllers
             return View(financialDonor);
         }
 
-        // POST: FinancialDonors/Delete/5
+        // POST: FinancialDonor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
