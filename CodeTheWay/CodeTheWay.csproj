@@ -338,6 +338,7 @@
     <Content Include="Views\StudentApplication\Details.cshtml" />
     <Content Include="Views\StudentApplication\Edit.cshtml" />
     <Content Include="Views\StudentApplication\Index.cshtml" />
+    <Content Include="Views\Home\Donor.cshtml" />
     <Content Include="Views\FinancialDonor\Create.cshtml" />
     <Content Include="Views\FinancialDonor\Delete.cshtml" />
     <Content Include="Views\FinancialDonor\Details.cshtml" />
