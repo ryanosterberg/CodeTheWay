@@ -30,7 +30,7 @@
         <div class="form-group col-md-3">
             <label for="DonorType">Donor Type</label>
             <select class="form-control" id="DonorType" onchange="switchPost(this.options[this.selectedIndex].text)">
-                <option selected></option>
+                <option></option>
                 <option>Financial</option>
                 <option>Facilities</option>
                 <option>Volunteer</option>
@@ -40,7 +40,7 @@
 
     <div id="dynamicForm"></div>
 
-    <div class="form-row form-group">
+    <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
 }
@@ -71,12 +71,12 @@
 <div id="Facilities" hidden>
     <h3>Facilities / Tech</h3>
     <hr />
-    <div class="form-row">
+    <div class="form-group">
         @Html.Label("Company")
         @Html.Editor("Company", new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessage("Company", "", new { @class = "text-danger" })
     </div>
-    <div class="form-row">
+    <div class="form-group">
         @Html.Label("Offerings")
         @Html.Editor("Offerings", new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessage("Offerings", "", new { @class = "text-danger" })
@@ -86,12 +86,12 @@
 <div id="Volunteer" hidden>
     <h3>Volunteer</h3>
     <hr />
-    <div class="form-row">
+    <div class="form-group">
         @Html.Label("Company")
         @Html.Editor("Company", new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessage("Company", "", new { @class = "text-danger" })
     </div>
-    <div class="form-row">
+    <div class="form-group">
         @Html.Label("Offerings")
         @Html.Editor("Offerings", new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessage("Offerings", "", new { @class = "text-danger" })
@@ -103,16 +103,12 @@
 </div>
 
 <script type="text/javascript">
-    var form = document.querySelector('form');
+    const form = document.querySelector('form');
 
     function switchPost(name) {
         if (name == "") return;
-        var curForm = form.querySelector('#dynamicForm');
+        let curForm = form.querySelector('#dynamicForm');
         curForm.innerHTML = document.documentElement.querySelector(`#${name}`).innerHTML;
         form.action = `/${name}Donor/Create`
-    }
-
-    function append(str) {
-        document.documentElement.insertAdjacentHTML('beforeend', str);
     }
 </script>
