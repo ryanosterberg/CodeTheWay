@@ -1,8 +1,10 @@
-﻿@{
+﻿@model CodeTheWay.Models.FinancialDonor
+
+@{
     ViewBag.Title = "Donor";
 }
 
-<h1>Donor Application</h1>
+<h1 class="text-center">Donor Application</h1>
 <hr />
 <h3>Contact Info</h3>
 <hr />
@@ -15,12 +17,10 @@
         <div class="form-group col-md-6">
             @Html.Label("FirstName", "First Name")
             @Html.Editor("FirstName", new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessage("FirstName", "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-6">
             @Html.Label("LastName", "Last Name")
             @Html.Editor("LastName", new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessage("LastName", "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -28,7 +28,6 @@
         <div class="form-group col-md-9">
             @Html.Label("Email")
             @Html.Editor("Email", new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-3">
             <label for="DonorType">Donor Type</label>
@@ -55,13 +54,10 @@
         <div class="form-group col-md-6">
             @Html.Label("EstAmt", "Estimated Amount")
             @Html.Editor("EstAmt", new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessage("EstAmt", "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-6">
-            @model CodeTheWay.Models.FinancialDonor
             @Html.LabelFor(model => model.CurrentFrequency)
             @Html.EnumDropDownListFor(model => model.CurrentFrequency, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.CurrentFrequency, "", new { @class = "text-danger" })
         </div>
     </div>
 </div>
@@ -72,12 +68,10 @@
     <div class="form-group">
         @Html.Label("Company")
         @Html.Editor("Company", new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessage("Company", "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
         @Html.Label("Offerings")
         @Html.Editor("Offerings", new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessage("Offerings", "", new { @class = "text-danger" })
     </div>
 </div>
 
@@ -87,12 +81,10 @@
     <div class="form-group">
         @Html.Label("Company")
         @Html.Editor("Company", new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessage("Company", "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
         @Html.Label("Offerings")
         @Html.Editor("Offerings", new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessage("Offerings", "", new { @class = "text-danger" })
     </div>
 </div>
 
