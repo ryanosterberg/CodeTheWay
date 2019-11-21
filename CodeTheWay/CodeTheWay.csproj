@@ -237,6 +237,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\CodeTheWay Logo.png" />
+    <Content Include="Images\MeetingSeason.jpg" />
+    <Content Include="Images\PlusSignCircleTransparent.png" />
+    <Content Include="Images\TalkingBoardCoolGuy.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
