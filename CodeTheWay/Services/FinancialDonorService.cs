@@ -15,7 +15,7 @@ namespace CodeTheWay.Services
             return repo.GetAllFinancialDonors();
         }
 
-        public FinancialDonor GetFinancialDonorsById(int id)
+        public FinancialDonor GetFinancialDonorById(int id)
         {
             return repo.GetFinancialDonorById(id);
         }

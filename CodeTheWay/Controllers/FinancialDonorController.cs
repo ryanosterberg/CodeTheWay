@@ -7,17 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
+using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
     public class FinancialDonorController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private FinancialDonorService service = new FinancialDonorService();
 
         // GET: FinancialDonor
         public ActionResult Index()
         {
-            return View(db.FinancialDonors.ToList());
+            return View(service.GetAllFinancialDonors());
         }
 
         // GET: FinancialDonor/Details/5
@@ -27,7 +28,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FinancialDonor financialDonor = db.FinancialDonors.Find(id);
+            FinancialDonor financialDonor = service.GetFinancialDonorById((int)id);
             if (financialDonor == null)
             {
                 return HttpNotFound();
@@ -50,8 +51,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.FinancialDonors.Add(financialDonor);
-                db.SaveChanges();
+                service.Add(financialDonor);
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +65,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FinancialDonor financialDonor = db.FinancialDonors.Find(id);
+            FinancialDonor financialDonor = service.GetFinancialDonorById((int)id);
             if (financialDonor == null)
             {
                 return HttpNotFound();
@@ -82,8 +82,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(financialDonor).State = EntityState.Modified;
-                db.SaveChanges();
+                service.Edit(financialDonor);
                 return RedirectToAction("Index");
             }
             return View(financialDonor);
@@ -96,7 +95,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FinancialDonor financialDonor = db.FinancialDonors.Find(id);
+            FinancialDonor financialDonor = service.GetFinancialDonorById((int)id);
             if (financialDonor == null)
             {
                 return HttpNotFound();
@@ -109,19 +108,8 @@ namespace CodeTheWay.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FinancialDonor financialDonor = db.FinancialDonors.Find(id);
-            db.FinancialDonors.Remove(financialDonor);
-            db.SaveChanges();
+            service.Delete(service.GetFinancialDonorById(id));
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
