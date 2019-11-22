@@ -3,11 +3,11 @@
 @{
     ViewBag.Title = "Create";
 }
-
+ 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <h1 class="text-md-center">Non-Profit Application</h1>
+    <h1 class="text-md-center">Financial Donor Application</h1>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-row">
