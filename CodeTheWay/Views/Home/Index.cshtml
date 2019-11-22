@@ -2,10 +2,40 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1 class="text-md-center">Code the Way</h1>
-    <img src="~/Images/CodeTheWay Logo.png" class="rounded float-right">
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div id="imageCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#imageCarousel" data-slide-to="1"></li>
+        <li data-target="#imageCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="height:300px;">
+            <img class="d-block w-100" src="~/Images/CodeTheWay Logo.png" alt="First slide" style="height:300px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Code the Way</h1>
+            </div>
+        </div>
+        <div class="carousel-item" style="height:300px;">
+            <img class="d-block w-100" src="~/Images/CodeTheWay Logo.png" alt="Second slide" style="height:300px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Code the Way</h1>
+            </div>
+        </div>
+        <div class="carousel-item" style="height:300px;">
+            <img class="d-block w-100" src="~/Images/CodeTheWay Logo.png" alt="Third slide" style="height:300px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Code the Way</h1>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 
 <hr />
