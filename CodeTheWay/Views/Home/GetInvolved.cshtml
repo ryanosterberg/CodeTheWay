@@ -46,6 +46,18 @@
         <img class="img-fluid" src="~/Images/MeetingSeason.jpg" />
     </div>
 </div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Student Applicaitons", "Create", "StudentApplication", null, new { @class = "nav-link" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Non-Profit Applicaitons", "Create", "NPOApplication", null, new { @class = "nav-link}" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Donor Form", "Donor", "Home", null, new { @class = "nav-link"})
+    </div>
+</div>
 
 <!--<hr />
 Get in touch
