@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+<!--
 <div id="imageCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
@@ -36,12 +36,12 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
-
+</div>-->
+<h1 class="text-center">Code the Way</h1>
 <hr />
-<h1 class="text-md-center" style="padding-top:20px; padding-bottom:10px;">What are we about?</h1>
+<h1 class="text-md-center py-2">What are we about?</h1>
 
-<div class="row" style="padding-bottom:20px;">
+<div class="row pb-2">
     <div class="col-md-6">
         <h3 class="text-md-center">Real-World Experience for Students</h3>
         <img src="~/Images/StudentsHomePage.png" class="rounded mx-auto d-block" height="150">
@@ -53,25 +53,25 @@
 </div>
 
 <hr />
-<h1 class="text-md-center" style="padding-top:20px; padding-bottom:10px;">Past Projects</h1>
+<h1 class="text-md-center py-2">Past Projects</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <a href="~/Views/Home/About.cshtml"><img src="~/Images/LifeNavigatorsLogo.jpg" width="300"></a>
+        <a href="/Home/About"><img src="~/Images/LifeNavigatorsLogo.jpg" width="300"></a>
         <p>Convergence Resource Center | 2019</p>
     </div>
     <div class="col-md-4">
-        <a href="~/Views/Home/About.cshtml"><img src="~/Images/ConvergenceResourceCenterLogo.png" width="300" height="150"></a>
+        <a href="/Home/About"><img src="~/Images/ConvergenceResourceCenterLogo.png" width="300" height="150"></a>
         <p>Life Navigators | 2018</p>
     </div>
     <div class="col-md-4">
-        <a href="~/Views/Home/About.cshtml"><img src="~/Images/HeroesForHealthcareLogo.png" width="300"></a>
+        <a href="/Home/About"><img src="~/Images/HeroesForHealthcareLogo.png" width="300"></a>
         <p>Heroes for Healthcare | 2017</p>
     </div>
 </div>
 
 <hr />
-<h1 class="text-md-center" style="padding-top:20px; padding-bottom:10px;">Testimonials</h1>
+<h1 class="text-md-center py-2">Testimonials</h1>
 
 <div class="row">
     <div class="col-md-4">
@@ -86,7 +86,7 @@
         <p>
             <img src="~/Images/QuotationMarks.png" height="40">
             This experience is close to priceless in value to me because I was able to see how much goes into a project. I was also able to take a peek into the professional realm where I may want to be in for my career. The connections I made will also help me in the future. I couldn't be more grateful for being able to take part in the first summer of Code the Way.
-            <img src="~/Images/QuotationMarks.png" height="40" style="transform:rotateY(180deg);">      
+            <img src="~/Images/QuotationMarks.png" height="40" style="transform:rotateY(180deg);">
         </p>
         <p>Miriam Khan, '18 BCHS</p>
     </div>
@@ -102,22 +102,8 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-1">
-
-    </div>
-    <div class="col-md-10">
-        <h1 class="text-md-center" style="padding-top:15px; padding-bottom:30px;">Students: Apply for the upcoming 2020 project season now!</h1>
-    </div>
-    <div class="col-md-1">
-
+    <div class="col-md-12"><h1 class="text-md-center py-2">Students: Apply for the upcoming 2020 project season now!</h1></div>
+    <div class="col-md-12">
+        <h3 class="text-center">@Html.ActionLink("Apply Now", "Create", "StudentApplication")</h3>
     </div>
 </div>
-    <div class="row">
-        <div class="col-md-12" style="padding-bottom:30px;">
-            <center>
-                <a href="~/Views/StudentApplication/Create.cshtml">
-                    <button type="button" class="text-md-center" style="padding-left:35px; padding-right:35px; padding-top:15px; padding-bottom:15px;">Apply Now</button>
-                </a>
-            </center>
-        </div>
-    </div>
