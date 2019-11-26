@@ -238,7 +238,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\20170524_111709.jpg" />
+    <Content Include="Images\20170524_144224.jpg" />
+    <Content Include="Images\586A0021.jpg" />
     <Content Include="Images\CodeTheWay Logo.png" />
+    <Content Include="Images\Team Learning.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
