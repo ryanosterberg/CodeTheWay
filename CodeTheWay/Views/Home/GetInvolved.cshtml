@@ -2,6 +2,88 @@
 @{
     ViewBag.Title = "Get Involved";
 }
+<!--Beginning Filler Information Section-->
+<div class="row mb-1">
+    <div class="col-md-7">
+        <h1>Partnering High Schools & Tech Companies</h1>
+        <p>Two years of high school students working for non-profits giving students real world job experience and letting students work collaboratively with eachother for a cause.</p>
+    </div>
+    <div class="col-md-5">
+        <img class="img-fluid" src="~/Images/TalkingBoardCoolGuy.jpg" />
+    </div>
+</div>
 
-<h2>Get Involved</h2>
+<hr />
+<!--Features bootstrap-->
+<div class="row mb-5">
+    <div class="col-md-4">
+        <center>
+            <img class="img-fluid" width="115" height="115" src="~/Images/PlusSignCircleTransparent.png" />
+            <h3>60+ Students</h3>
+        </center>
+    </div>
+    <div class="col-md-4">
+        <center>
+            <img class="img-fluid" width="115" height="115" src="~/Images/PlusSignCircleTransparent.png" />
+            <h3>Three New Certified Teachers</h3>
+        </center>
+    </div>
+    <div class="col-md-4">
+        <center>
+            <img class="img-fluid" width="115" height="115" src="~/Images/PlusSignCircleTransparent.png" />
+            <h3>Two Non-Profits Benefitted</h3>
+        </center>
+    </div>
+</div>
+<hr />
+<!--Filler image and description-->
+<div class="row mb-1">
+    <div class="col-md-6">
+        <h1>Contributing to Real World Companies</h1>
+        <p>Multiple non profits that recieved more than $250,000 worth of technology services, which lets the human work get shifted to different important services. This aswell as sixty plus different students from multiple different schools having meaningful volunteer experiences, aswell as recieving scholarships and also having authentic work experiences recieved.</p>
+    </div>
+    <div class="col-md-6">
+        <img class="img-fluid" src="~/Images/MeetingSeason.jpg" />
+    </div>
+</div>
+<hr />
+<div class="row mb-5">
+    <div class="col-md-12">
+        <h1 class="text-center">Take action by filling out an application</h1>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-md-4">
+        @Html.ActionLink("Student Applications", "Create", "StudentApplication", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Non-Profit Applications", "Create", "NPOApplication", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Donor Form", "Donor", "Home", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
+    </div>
+</div>
 
+<!--<hr />
+Get in touch
+<div class="row mb-5">
+    <div class="col-md-5">
+        <h3>Get in touch</h3>
+        <p>Filler content yes cool Filler content yes cool Filler content yes cool Filler content yes cool Filler content yes cool </p>
+        <address>
+            16900 Gebhardt Rd, Brookfield, WI 53005<br>
+            1-262-345-5678<br>
+        </address>
+    </div>
+</div>
+<hr />
+    -->
+<!--Get involved
+<div class="row">
+    <div class="col-md-8">
+        <h3>Join the Movement to Create Opportunities</h3>
+    </div>
+    <div class="col-md-4">
+        <button>Donate</button>
+    </div>
+</div>-->

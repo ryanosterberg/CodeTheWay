@@ -242,6 +242,9 @@
     <Content Include="Images\20170524_144224.jpg" />
     <Content Include="Images\586A0021.jpg" />
     <Content Include="Images\CodeTheWay Logo.png" />
+    <Content Include="Images\MeetingSeason.jpg" />
+    <Content Include="Images\PlusSignCircleTransparent.png" />
+    <Content Include="Images\TalkingBoardCoolGuy.jpg" />
     <Content Include="Images\RyanBennettSmaller.png" />
     <Content Include="Images\Team Learning.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
