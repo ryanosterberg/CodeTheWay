@@ -1,31 +1,111 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
+<!--
+<div id="imageCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#imageCarousel" data-slide-to="1"></li>
+        <li data-target="#imageCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="height:400px;">
+            <img class="d-block w-100" src="~/Images/CodeTheWay Logo.png" alt="First slide" style="height:400px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Code the Way</h1>
+            </div>
+        </div>
+        <div class="carousel-item" style="height:400px;">
+            <img class="d-block w-100" src="~/Images/CodeTheWay Logo.png" alt="Second slide" style="height:400px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Code the Way</h1>
+            </div>
+        </div>
+        <div class="carousel-item" style="height:400px;">
+            <img class="d-block w-100" src="~/Images/CodeTheWay Logo.png" alt="Third slide" style="height:400px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Code the Way</h1>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>-->
+<h1 class="text-center">Code the Way</h1>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<hr />
+
+<h1 class="text-md-center py-2">What are we about?</h1>
+<div class="row pb-2">
+    <div class="col-md-6">
+        <h3 class="text-md-center">Real-World Experience for Students</h3>
+        <img src="~/Images/StudentsHomePage.png" class="rounded mx-auto d-block" height="150">
+    </div>
+    <div class="col-md-6">
+        <h3 class="text-md-center">Opportunities for Companies</h3>
+        <img src="~/Images/BuildingHomePage.png" class="rounded mx-auto d-block" height="150">
+    </div>
 </div>
 
+<hr />
+
+<h1 class="text-md-center py-2">Past Projects</h1>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <a href="/Home/About"><img src="~/Images/ConvergenceResourceCenterLogo.png" width="300" height="150"></a>
+        <p>Convergence Resource Center | 2019</p>
+    </div>
+    <div class="col-md-4">
+        <a href="/Home/About"><img src="~/Images/LifeNavigatorsLogo.jpg" width="300"></a>
+        <p>Life Navigators | 2018</p>
+    </div>
+    <div class="col-md-4">
+        <a href="/Home/About"><img src="~/Images/HeroesForHealthcareLogo.png" width="300"></a>
+        <p>Heroes for Healthcare | 2017</p>
+    </div>
+</div>
+
+<hr />
+
+<h1 class="text-md-center py-2">Testimonials</h1>
+<div class="row">
+    <div class="col-md-4">
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            <img src="~/Images/QuotationMarks.png" height="40">
+            Throughout the course of the summer, I have learned a great deal of new concepts. These new topics are not just limited to computer code. Along with learning proper source control, how to use html, css, and javascript to code a website, and setting up a database communicating data throughout the model, I also grasped skills pertinent to the workplace. I believe these workplace skills to invaluable, more so than any of those related to fullstack development. Of these skills, communicating with both peers and superiors is probably most applicable to just about anything and everything. I found communication to be the key to success. In addition to communication skills, scheduling and time management were also valuable takeaways.
+            <img src="~/Images/QuotationMarks.png" height="40" style="transform:rotateY(180deg);">
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>Tyler Tran, '18 BCHS</p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p>
+            <img src="~/Images/QuotationMarks.png" height="40">
+            This experience is close to priceless in value to me because I was able to see how much goes into a project. I was also able to take a peek into the professional realm where I may want to be in for my career. The connections I made will also help me in the future. I couldn't be more grateful for being able to take part in the first summer of Code the Way.
+            <img src="~/Images/QuotationMarks.png" height="40" style="transform:rotateY(180deg);">
+        </p>
+        <p>Miriam Khan, '18 BCHS</p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p>
+            <img src="~/Images/QuotationMarks.png" height="40">
+            I believe that the Code the Way internship program has been a life changing experience for all involved. Before the summer experience, we were all rather inexperienced students with just a basic understanding of software development and a curiosity to learn more. As the end of the summer quickly approaches, I can confidently say that my teammates and I have grown immensely in our knowledge of not only software development and the agile method but the business world as a whole.
+            <img src="~/Images/QuotationMarks.png" height="40" style="transform:rotateY(180deg);">
+        </p>
+        <p>Ben Tan, '19 BCHS</p>
+    </div>
+</div>
+
+<hr />
+
+<div class="row text-center">
+    <div class="col-md-12"><h1 class="mb-3">Students: Apply for the upcoming 2020 project season now!</h1></div>
+    <div class="col-md-12">
+        @Html.ActionLink("Apply Now", "Create", "StudentApplication", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
     </div>
 </div>
