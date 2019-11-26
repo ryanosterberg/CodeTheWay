@@ -47,15 +47,20 @@
     </div>
 </div>
 <hr />
-<div class="row">
+<div class="row mb-5">
+    <div class="col-md-12">
+        <h1 class="text-center">Take action by filling out an application</h1>
+    </div>
+</div>
+<div class="row text-center">
     <div class="col-md-4">
-        @Html.ActionLink("Student Applicaitons", "Create", "StudentApplication", null, new { @class = "nav-link" })
+        @Html.ActionLink("Student Applications", "Create", "StudentApplication", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
     </div>
     <div class="col-md-4">
-        @Html.ActionLink("Non-Profit Applicaitons", "Create", "NPOApplication", null, new { @class = "nav-link}" })
+        @Html.ActionLink("Non-Profit Applications", "Create", "NPOApplication", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
     </div>
     <div class="col-md-4">
-        @Html.ActionLink("Donor Form", "Donor", "Home", null, new { @class = "nav-link"})
+        @Html.ActionLink("Donor Form", "Donor", "Home", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
     </div>
 </div>
 
