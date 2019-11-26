@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 <!--
 <div id="imageCarousel" class="carousel slide" data-ride="carousel">
@@ -38,9 +38,10 @@
     </a>
 </div>-->
 <h1 class="text-center">Code the Way</h1>
-<hr />
-<h1 class="text-md-center py-2">What are we about?</h1>
 
+<hr />
+
+<h1 class="text-md-center py-2">What are we about?</h1>
 <div class="row pb-2">
     <div class="col-md-6">
         <h3 class="text-md-center">Real-World Experience for Students</h3>
@@ -53,8 +54,8 @@
 </div>
 
 <hr />
-<h1 class="text-md-center py-2">Past Projects</h1>
 
+<h1 class="text-md-center py-2">Past Projects</h1>
 <div class="row">
     <div class="col-md-4">
         <a href="/Home/About"><img src="~/Images/ConvergenceResourceCenterLogo.png" width="300" height="150"></a>
@@ -71,8 +72,8 @@
 </div>
 
 <hr />
-<h1 class="text-md-center py-2">Testimonials</h1>
 
+<h1 class="text-md-center py-2">Testimonials</h1>
 <div class="row">
     <div class="col-md-4">
         <p>
@@ -101,9 +102,10 @@
 </div>
 
 <hr />
-<div class="row">
-    <div class="col-md-12"><h1 class="text-md-center py-2">Students: Apply for the upcoming 2020 project season now!</h1></div>
+
+<div class="row text-center">
+    <div class="col-md-12"><h1 class="mb-3">Students: Apply for the upcoming 2020 project season now!</h1></div>
     <div class="col-md-12">
-        <h3 class="text-center">@Html.ActionLink("Apply Now", "Create", "StudentApplication")</h3>
+        @Html.ActionLink("Apply Now", "Create", "StudentApplication", null, htmlAttributes: new { @class = "btn btn-outline-primary btn-lg", role = "button" })
     </div>
 </div>
