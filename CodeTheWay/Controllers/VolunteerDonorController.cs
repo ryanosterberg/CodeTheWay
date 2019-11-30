@@ -7,17 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
+using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
     public class VolunteerDonorController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private VolunteerDonorService service = new VolunteerDonorService();
 
         // GET: VolunteerDonor
         public ActionResult Index()
         {
-            return View(db.VolunteerDonors.ToList());
+            return View(service.GetAllVolunteerDonors());
         }
 
         // GET: VolunteerDonor/Details/5
@@ -27,7 +28,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteerDonor volunteerDonor = db.VolunteerDonors.Find(id);
+            VolunteerDonor volunteerDonor = service.GetVolunteerDonorById((int)id);
             if (volunteerDonor == null)
             {
                 return HttpNotFound();
@@ -50,8 +51,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.VolunteerDonors.Add(volunteerDonor);
-                db.SaveChanges();
+                service.Add(volunteerDonor);
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +65,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteerDonor volunteerDonor = db.VolunteerDonors.Find(id);
+            VolunteerDonor volunteerDonor = service.GetVolunteerDonorById((int)id);
             if (volunteerDonor == null)
             {
                 return HttpNotFound();
@@ -82,8 +82,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(volunteerDonor).State = EntityState.Modified;
-                db.SaveChanges();
+                service.Edit(volunteerDonor);
                 return RedirectToAction("Index");
             }
             return View(volunteerDonor);
@@ -96,7 +95,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteerDonor volunteerDonor = db.VolunteerDonors.Find(id);
+            VolunteerDonor volunteerDonor = service.GetVolunteerDonorById((int)id);
             if (volunteerDonor == null)
             {
                 return HttpNotFound();
@@ -109,19 +108,8 @@ namespace CodeTheWay.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            VolunteerDonor volunteerDonor = db.VolunteerDonors.Find(id);
-            db.VolunteerDonors.Remove(volunteerDonor);
-            db.SaveChanges();
+            service.Delete(service.GetVolunteerDonorById((int)id));
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
