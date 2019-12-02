@@ -7,17 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
+using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
     public class FacilitiesTechDonorController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private FacilitiesTechDonorService service = new FacilitiesTechDonorService();
 
         // GET: FacilitiesTechDonor
         public ActionResult Index()
         {
-            return View(db.FacilitiesTechDonors.ToList());
+            return View(service.GetAllFacilitiesTechDonors());
         }
 
         // GET: FacilitiesTechDonor/Details/5
@@ -27,7 +28,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FacilitiesTechDonor facilitiesTechDonor = db.FacilitiesTechDonors.Find(id);
+            FacilitiesTechDonor facilitiesTechDonor = service.GetFacilitiesTechDonorById((int)id);
             if (facilitiesTechDonor == null)
             {
                 return HttpNotFound();
@@ -50,8 +51,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.FacilitiesTechDonors.Add(facilitiesTechDonor);
-                db.SaveChanges();
+                service.Add(facilitiesTechDonor);
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +65,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FacilitiesTechDonor facilitiesTechDonor = db.FacilitiesTechDonors.Find(id);
+            FacilitiesTechDonor facilitiesTechDonor = service.GetFacilitiesTechDonorById((int)id);
             if (facilitiesTechDonor == null)
             {
                 return HttpNotFound();
@@ -82,8 +82,7 @@ namespace CodeTheWay.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(facilitiesTechDonor).State = EntityState.Modified;
-                db.SaveChanges();
+                service.Edit(facilitiesTechDonor);
                 return RedirectToAction("Index");
             }
             return View(facilitiesTechDonor);
@@ -96,7 +95,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FacilitiesTechDonor facilitiesTechDonor = db.FacilitiesTechDonors.Find(id);
+            FacilitiesTechDonor facilitiesTechDonor = service.GetFacilitiesTechDonorById((int)id);
             if (facilitiesTechDonor == null)
             {
                 return HttpNotFound();
@@ -109,19 +108,8 @@ namespace CodeTheWay.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FacilitiesTechDonor facilitiesTechDonor = db.FacilitiesTechDonors.Find(id);
-            db.FacilitiesTechDonors.Remove(facilitiesTechDonor);
-            db.SaveChanges();
+            service.Delete(service.GetFacilitiesTechDonorById((int)id));
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
