@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title | Code The Way</title>
+    @*<link rel="stylesheet" href="~/Content/flatly.min.css" media="all" />
+    <link rel="stylesheet" href="~/Content/Site.css" media="all" />*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -11,18 +13,27 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
         <div class="container">
+            @Html.ActionLink("Code The Way", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @Html.ActionLink("Code The Way", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav navbar-right ml-auto">
-                    <li class="nav-item">@Html.ActionLink("Get Involved", "GetInvolved", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Students", "Create", "StudentApplication", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Donate Now", "Create", "FinancialDonor", null, new { @class = "nav-link text-light" })</li>
-                </ul>
+                <div class="navbar-nav navbar-right ml-auto">
+                    @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-item nav-link" })
+                    @Html.ActionLink("Projects", "Projects", "Home", null, new { @class = "nav-item nav-link" })
+                    @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-item nav-link" })
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Interested?
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @Html.ActionLink("Students", "Create", "StudentApplication", null, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Volunteers", "Create", "VolunteerDonor", null, new { @class = "dropdown-item" })
+                            @Html.ActionLink("NPOs", "Create", "NPOApplication", null, new { @class = "dropdown-item" })
+                        </div>
+                    </div>
+                    @Html.ActionLink("Donate Now", "Create", "FinancialDonor", null, new { @class = "nav-item nav-link text-light" })
+                </div>
             </div>
         </div>
     </nav>
@@ -37,7 +48,5 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    @Styles.Render("https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap")
-    @Styles.Render("https://fonts.googleapis.com/css?family=Roboto&display=swap")
 </body>
 </html>
