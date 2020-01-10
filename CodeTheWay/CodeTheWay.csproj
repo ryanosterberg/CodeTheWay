@@ -364,6 +364,7 @@
     <Content Include="Views\NPOApplication\Details.cshtml" />
     <Content Include="Views\NPOApplication\Edit.cshtml" />
     <Content Include="Views\NPOApplication\Index.cshtml" />
+    <Content Include="Views\Home\Projects.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
