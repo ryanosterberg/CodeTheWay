@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title | Code The Way</title>
     @*<link rel="stylesheet" href="~/Content/flatly.min.css" media="all" />
-    <link rel="stylesheet" href="~/Content/Site.css" media="all" />*@
+        <link rel="stylesheet" href="~/Content/Site.css" media="all" />*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
@@ -22,16 +21,19 @@
                     @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-item nav-link" })
                     @Html.ActionLink("Projects", "Projects", "Home", null, new { @class = "nav-item nav-link" })
                     @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-item nav-link" })
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Interested?
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @Html.ActionLink("Students", "Create", "StudentApplication", null, new { @class = "dropdown-item" })
-                            @Html.ActionLink("Volunteers", "Create", "VolunteerDonor", null, new { @class = "dropdown-item" })
-                            @Html.ActionLink("NPOs", "Create", "NPOApplication", null, new { @class = "dropdown-item" })
-                        </div>
-                    </div>
+                    @*<div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Interested?
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                @Html.ActionLink("Students", "Create", "StudentApplication", null, new { @class = "dropdown-item" })
+                                @Html.ActionLink("Volunteers", "Create", "VolunteerDonor", null, new { @class = "dropdown-item" })
+                                @Html.ActionLink("NPOs", "Create", "NPOApplication", null, new { @class = "dropdown-item" })
+                            </div>
+                        </div>*@
+                    @Html.ActionLink("Students", "Create", "StudentApplication", null, new { @class = "nav-item nav-link" })
+                    @Html.ActionLink("Volunteers", "Create", "VolunteerDonor", null, new { @class = "nav-item nav-link" })
+                    @Html.ActionLink("NPOs", "Create", "NPOApplication", null, new { @class = "nav-item nav-link" })
                     @Html.ActionLink("Donate Now", "Create", "FinancialDonor", null, new { @class = "nav-item nav-link text-light" })
                 </div>
             </div>

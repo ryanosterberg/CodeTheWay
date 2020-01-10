@@ -252,6 +252,7 @@
     <Content Include="Images\HeroesForHealthcare.jpg" />
     <Content Include="Images\2019Pres.jpg" />
     <Content Include="Images\LifeNavigatorsLogo.jpg" />
+    <Content Include="Images\Presentation.jpg" />
     <Content Include="Images\ProjPres.jpg" />
     <Content Include="Images\MeetingSeason.jpg" />
     <Content Include="Images\PlusSignCircleTransparent.png" />
@@ -259,6 +260,7 @@
     <Content Include="Images\TalkingBoardCoolGuy.jpg" />
     <Content Include="Images\RyanBennettSmaller.png" />
     <Content Include="Images\Team Learning.jpg" />
+    <Content Include="Images\Working.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
