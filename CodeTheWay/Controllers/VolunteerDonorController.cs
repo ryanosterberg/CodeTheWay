@@ -52,13 +52,14 @@ namespace CodeTheWay.Controllers
             if (ModelState.IsValid)
             {
                 service.Add(volunteerDonor);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(volunteerDonor);
         }
 
         // GET: VolunteerDonor/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
