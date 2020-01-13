@@ -77,7 +77,7 @@
         <div class="form-group col-md-5">
             <div class="form-check">
                 @Html.EditorFor(model => model.PresentAllClassDates, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.PresentAllClassDates, "I will be here for all days of the Master Class", new { @class = "form-check-label" })
+                @Html.LabelFor(model => model.PresentAllClassDates, "I will be here for all days of the Master Class: (TBD)", new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.PresentAllClassDates, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -97,7 +97,7 @@
         <div class="form-group col-md-5">
             <div class="form-check">
                 @Html.EditorFor(model => model.PresentAllSeasonDates, new { htmlAttributes = new { @class = "form-check-input" } })
-                @Html.LabelFor(model => model.PresentAllSeasonDates, "I will be here for all days of the Project Season", new { @class = "form-check-label" })
+                @Html.LabelFor(model => model.PresentAllSeasonDates, "I will be here for all days of the Project Season: (TBD) ", new { @class = "form-check-label" })
                 @Html.ValidationMessageFor(model => model.PresentAllSeasonDates, "", new { @class = "text-danger" })
             </div>
         </div>
