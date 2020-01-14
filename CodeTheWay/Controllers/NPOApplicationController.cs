@@ -52,7 +52,7 @@ namespace CodeTheWay.Controllers
             if (ModelState.IsValid)
             {
                 service.Add(nPOApplication);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(nPOApplication);
