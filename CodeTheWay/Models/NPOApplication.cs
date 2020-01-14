@@ -54,11 +54,11 @@ namespace CodeTheWay.Models
         [Required]
         public string NPOVision { get; set; }
 
-        [DisplayName("Website URL")]
+        [DisplayName("Website URL (if applicable)")]
         [Url]
         public string WebURL { get; set; }
 
-        [DisplayName("Problems and Desires")]
+        [DisplayName("How can Code The Way help you?")]
         [Required]
         public string ProblemsAndDesires { get; set; }
     }
