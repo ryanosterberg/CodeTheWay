@@ -48,18 +48,21 @@ namespace CodeTheWay.Models
 
         [DisplayName("Mission")]
         [Required]
+        [DataType(DataType.MultilineText)]
         public string NPOMission { get; set; }
 
         [DisplayName("Vision")]
         [Required]
+        [DataType(DataType.MultilineText)]
         public string NPOVision { get; set; }
 
-        [DisplayName("Website URL (if applicable)")]
+        [DisplayName("Website URL")]
         [Url]
         public string WebURL { get; set; }
 
         [DisplayName("How can Code The Way help you?")]
         [Required]
+        [DataType(DataType.MultilineText)]
         public string ProblemsAndDesires { get; set; }
     }
 }

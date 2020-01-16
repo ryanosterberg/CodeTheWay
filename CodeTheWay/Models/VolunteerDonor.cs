@@ -28,6 +28,7 @@ namespace CodeTheWay.Models
         public string Company { get; set; }
 
         [Required]
+        [DataType(DataType.MultilineText)]
         public string Offerings { get; set; }
     }
 }
