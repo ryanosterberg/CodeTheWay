@@ -37,5 +37,10 @@ namespace CodeTheWay.Controllers
         {
             return View();
         }
+
+        public ActionResult Projects()
+        {
+            return View();
+        }
     }
 }
