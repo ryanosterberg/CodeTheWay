@@ -248,6 +248,8 @@
     <Content Include="Images\586A0021.jpg" />
     <Content Include="Images\HoHOwner.jpg" />
     <Content Include="Images\CodeTheWay Logo.png" />
+    <Content Include="Images\CodeTheWay2018.jpg" />
+    <Content Include="Images\CodeTheWay2019.jpg" />
     <Content Include="Images\crc.png" />
     <Content Include="Images\HeroesForHealthcare.jpg" />
     <Content Include="Images\2019Pres.jpg" />
@@ -429,6 +431,7 @@
     <Content Include="Views\NPOApplication\Details.cshtml" />
     <Content Include="Views\NPOApplication\Edit.cshtml" />
     <Content Include="Views\NPOApplication\Index.cshtml" />
+    <Content Include="Views\Home\Projects.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
