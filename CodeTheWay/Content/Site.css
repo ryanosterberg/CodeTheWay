@@ -1,4 +1,7 @@
-﻿body {
+﻿@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -23,6 +26,34 @@ select,
 textarea {
     max-width: 280px;
 } */
+
+/* CUSTOMIZE THE CAROUSEL */
+
+.carousel-inner > .carousel-item {
+    height: 50vh;
+}
+
+/* Since positioning the image, we need to help out the caption */
+/*.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}*/
+
+/* Declare heights because of positioning of img element */
+/*.carousel-item {
+    height: 32rem;
+}*/
+
+.carousel-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.4);
+}
 
 .navbar {
     background-color: #01303F;
