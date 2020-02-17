@@ -246,6 +246,8 @@
     <Content Include="Images\20170524_111709.jpg" />
     <Content Include="Images\20170524_144224.jpg" />
     <Content Include="Images\586A0021.jpg" />
+    <Content Include="Images\Brad Website-small.jpg" />
+    <Content Include="Images\Brad Website.jpg" />
     <Content Include="Images\HoHOwner.jpg" />
     <Content Include="Images\CodeTheWay Logo.png" />
     <Content Include="Images\CodeTheWay2018.jpg" />
@@ -255,10 +257,13 @@
     <Content Include="Images\2019Pres.jpg" />
     <Content Include="Images\Life Navigators - Sprint 1.jpg" />
     <Content Include="Images\LifeNavigatorsLogo.jpg" />
+    <Content Include="Images\Osterber-Website-small.jpg" />
+    <Content Include="Images\Osterberg-Website.jpg" />
     <Content Include="Images\Presentation.jpg" />
     <Content Include="Images\ProjPres.jpg" />
     <Content Include="Images\MeetingSeason.jpg" />
     <Content Include="Images\PlusSignCircleTransparent.png" />
+    <Content Include="Images\Ryan-Bennett-website - small.jpg" />
     <Content Include="Images\SHMFlipped.jpg" />
     <Content Include="Images\TalkingBoardCoolGuy.jpg" />
     <Content Include="Images\RyanBennettSmaller.png" />
