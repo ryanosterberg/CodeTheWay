@@ -11,6 +11,7 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
+    [Authorize(Roles = "")]
     public class StudentApplicationController : Controller
     {
         private StudentApplicationService service = new StudentApplicationService();
@@ -37,6 +38,7 @@ namespace CodeTheWay.Controllers
         }
 
         // GET: StudentApplication/Create
+        [AllowAnonymous]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +49,7 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,Accomplishments,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
         {
             if (ModelState.IsValid)

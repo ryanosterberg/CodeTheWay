@@ -11,6 +11,7 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
+    [Authorize(Users = "")]
     public class NPOApplicationController : Controller
     {
         private NPOApplicationService service = new NPOApplicationService();
@@ -28,7 +29,7 @@ namespace CodeTheWay.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NPOApplication nPOApplication = service.GetNPOApplicationById((int) id);
+            NPOApplication nPOApplication = service.GetNPOApplicationById((int)id);
             if (nPOApplication == null)
             {
                 return HttpNotFound();
@@ -37,6 +38,7 @@ namespace CodeTheWay.Controllers
         }
 
         // GET: NPOApplication/Create
+        [AllowAnonymous]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +49,7 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create([Bind(Include = "Id,OrgName,Email,PhoneNum,Address,ApplicantFirstName,ApplicantLastName,ApplicantPosition,ApplicantEmail,ApplicantPhone,NPOMission,NPOVision,WebURL,ProblemsAndDesires")] NPOApplication nPOApplication)
         {
             if (ModelState.IsValid)

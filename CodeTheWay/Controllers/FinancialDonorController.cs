@@ -11,6 +11,7 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
+    [Authorize(Roles = "")]
     public class FinancialDonorController : Controller
     {
         private FinancialDonorService service = new FinancialDonorService();
@@ -37,6 +38,7 @@ namespace CodeTheWay.Controllers
         }
 
         // GET: FinancialDonor/Create
+        [AllowAnonymous]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +49,7 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,EstAmt,CurrentFrequency")] FinancialDonor financialDonor)
         {
             if (ModelState.IsValid)
