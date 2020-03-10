@@ -59,6 +59,7 @@ namespace CodeTheWay.Controllers
         }
 
         // GET: FacilitiesTechDonor/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,6 +78,7 @@ namespace CodeTheWay.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,Company,Offerings")] FacilitiesTechDonor facilitiesTechDonor)
         {
@@ -88,6 +90,7 @@ namespace CodeTheWay.Controllers
             return View(facilitiesTechDonor);
         }
 
+        [Authorize]
         // GET: FacilitiesTechDonor/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -103,6 +106,7 @@ namespace CodeTheWay.Controllers
             return View(facilitiesTechDonor);
         }
 
+        [Authorize]
         // POST: FacilitiesTechDonor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

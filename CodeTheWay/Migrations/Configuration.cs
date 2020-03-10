@@ -1,5 +1,8 @@
 namespace CodeTheWay.Migrations
 {
+    using CodeTheWay.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,10 +17,22 @@ namespace CodeTheWay.Migrations
 
         protected override void Seed(CodeTheWay.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+
+            if (!context.Users.Any(u => u.UserName == "rbennett@safenetconsulting.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser
+                {
+                    UserName = "rbennett@safenetconsulting.com",
+                    Email = "rbennett@safenetconsulting.com",
+                    EmailConfirmed = true
+                };
+
+                manager.Create(user, "Safenet01!");
+           
+            }
         }
     }
 }
