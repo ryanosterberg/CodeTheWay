@@ -16,6 +16,7 @@ namespace CodeTheWay.Controllers
         private FacilitiesTechDonorService service = new FacilitiesTechDonorService();
 
         // GET: FacilitiesTechDonor
+        [Authorize]
         public ActionResult Index()
         {
             return View(service.GetAllFacilitiesTechDonors());

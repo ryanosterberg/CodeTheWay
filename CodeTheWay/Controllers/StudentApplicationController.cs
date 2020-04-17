@@ -11,11 +11,12 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
-    [Authorize(Roles = "")]
+
     public class StudentApplicationController : Controller
     {
         private StudentApplicationService service = new StudentApplicationService();
 
+        [Authorize]
         // GET: StudentApplication
         public ActionResult Index()
         {

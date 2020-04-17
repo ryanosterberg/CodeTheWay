@@ -11,11 +11,12 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
-    [Authorize(Users = "")]
+  
     public class NPOApplicationController : Controller
     {
         private NPOApplicationService service = new NPOApplicationService();
 
+        [Authorize]
         // GET: NPOApplication
         public ActionResult Index()
         {

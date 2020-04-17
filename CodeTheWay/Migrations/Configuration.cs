@@ -4,6 +4,7 @@ namespace CodeTheWay.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -17,22 +18,32 @@ namespace CodeTheWay.Migrations
 
         protected override void Seed(CodeTheWay.Models.ApplicationDbContext context)
         {
+            Dictionary<string, string> admins = new Dictionary<string, string>();
+            admins.Add("ryanjbennett@live.com", "qqbreaksrr11");
+            admins.Add("ryan.p.osterberg@gmail.com", "teamCTW1!");
+            admins.Add("bzepecki@octaviantg.com", "2020CTWDominates!$");
 
-
-            if (!context.Users.Any(u => u.UserName == "rbennett@safenetconsulting.com"))
+            foreach(var kvp in admins)
             {
-                var store = new UserStore<ApplicationUser>(context);
-                var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser
+                if (!context.Users.Any(u => u.UserName == kvp.Key))
                 {
-                    UserName = "rbennett@safenetconsulting.com",
-                    Email = "rbennett@safenetconsulting.com",
-                    EmailConfirmed = true
-                };
+                    var store = new UserStore<ApplicationUser>(context);
+                    var manager = new UserManager<ApplicationUser>(store);
+                    var user = new ApplicationUser
+                    {
+                        UserName = kvp.Key,
+                        Email = kvp.Key,
+                        EmailConfirmed = true
+                    };
 
-                manager.Create(user, "Safenet01!");
-           
+                    manager.Create(user, kvp.Value);
+
+                }
             }
+
+           
+
+
         }
     }
 }

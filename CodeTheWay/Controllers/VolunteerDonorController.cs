@@ -11,11 +11,12 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
-    [Authorize(Roles = "")]
+ 
     public class VolunteerDonorController : Controller
     {
         private VolunteerDonorService service = new VolunteerDonorService();
 
+        [Authorize]
         // GET: VolunteerDonor
         public ActionResult Index()
         {
