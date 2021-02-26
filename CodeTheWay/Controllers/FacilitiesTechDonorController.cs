@@ -53,11 +53,11 @@ namespace CodeTheWay.Controllers
             if (ModelState.IsValid)
             {
                 service.Add(facilitiesTechDonor);
-                String text = "Hello " + facilitiesTechDonor.FirstName + ", <br/><br/> Thank you for donating to Code the Way. If you have any questions, please contact us at: www.codetheway.org/Home/Contact";
-                String subject = "Thank You for Donating to Code the Way!";
-                String name = facilitiesTechDonor.FirstName + " " + facilitiesTechDonor.LastName;
-                await Email(name, facilitiesTechDonor.Email, text, subject);
-                await AdminEmail(facilitiesTechDonor);
+                //String text = "Hello " + facilitiesTechDonor.FirstName + ", <br/><br/> Thank you for donating to Code the Way. If you have any questions, please contact us at: www.codetheway.org/Home/Contact";
+                //String subject = "Thank You for Donating to Code the Way!";
+                //String name = facilitiesTechDonor.FirstName + " " + facilitiesTechDonor.LastName;
+                //await Email(name, facilitiesTechDonor.Email, text, subject);
+                //await AdminEmail(facilitiesTechDonor);
                 return RedirectToAction("Index");
             }
 

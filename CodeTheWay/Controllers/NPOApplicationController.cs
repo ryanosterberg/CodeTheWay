@@ -56,7 +56,7 @@ namespace CodeTheWay.Controllers
             if (ModelState.IsValid)
             {
                 service.Add(nPOApplication);
-                String text = "Hello " + nPOApplication.ApplicantFirstName + ", <br/><br/> Thank you for coming to Code the Way. If you have any questions, please contact us at: www.codetheway.org/Home/Contact";
+                String text = "Hello " + nPOApplication.ApplicantFirstName + ", <br/>Thank you for applying to be a nonprofit partner of Code the Way.  Your mission, vision, and needs are extremely important to Code the Way.  A member of the Code the Way team will contact you within the next business week.<br><br>Brad Zepecki<br>b.zepecki@codetheway.org<br>Founder - Code the Way<br>President and Director of Octavian Technology";
                 String subject = "Thank You for Coming to Code the Way!";
                 String name = nPOApplication.ApplicantFirstName + " " + nPOApplication.ApplicantLastName;
                 await Email(name, nPOApplication.ApplicantEmail, text, subject);
