@@ -4,25 +4,26 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using CodeTheWay.Models;
 using CodeTheWay.Services;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace CodeTheWay.Controllers
 {
-
-    public class StudentApplicationController : Controller
+    [Authorize(Roles = "")]
+    public class StudentApplicationController : BaseController
     {
         private StudentApplicationService service = new StudentApplicationService();
-
-        [Authorize]
         // GET: StudentApplication
         public ActionResult Index()
         {
             return View(service.GetAllStudentApplications());
         }
-
         // GET: StudentApplication/Details/5
         public ActionResult Details(int? id)
         {
@@ -51,11 +52,16 @@ namespace CodeTheWay.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,Accomplishments,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
+        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,Email,HighSchool,EstGradDate,WindowsLaptop,CSAComplete,Accomplishments,PresentAllClassDates,MissedClassDates,PresentAllSeasonDates,MissedSeasonDates")] StudentApplication studentApplication)
         {
             if (ModelState.IsValid)
             {
                 service.Add(studentApplication);
+                String text = "Hello " + studentApplication.FirstName + ", <br/><br/> Thank you for applying to help at Code the Way. If you have any questions, please contact us at: www.codetheway.org/Home/Contact";
+                String subject = "Thank You for Signing Up for Code the Way!";
+                String name = studentApplication.FirstName + " " + studentApplication.LastName;
+                await Email(name, studentApplication.Email, text, subject);
+                await AdminEmail(studentApplication);
                 return RedirectToAction("Index", "Home");
             }
 

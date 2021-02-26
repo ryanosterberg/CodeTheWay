@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
@@ -11,12 +12,11 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
-    public class FacilitiesTechDonorController : Controller
+    public class FacilitiesTechDonorController : BaseController
     {
         private FacilitiesTechDonorService service = new FacilitiesTechDonorService();
 
         // GET: FacilitiesTechDonor
-        [Authorize]
         public ActionResult Index()
         {
             return View(service.GetAllFacilitiesTechDonors());
@@ -48,11 +48,16 @@ namespace CodeTheWay.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,Company,Offerings")] FacilitiesTechDonor facilitiesTechDonor)
+        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,Email,Company,Offerings")] FacilitiesTechDonor facilitiesTechDonor)
         {
             if (ModelState.IsValid)
             {
                 service.Add(facilitiesTechDonor);
+                String text = "Hello " + facilitiesTechDonor.FirstName + ", <br/><br/> Thank you for donating to Code the Way. If you have any questions, please contact us at: www.codetheway.org/Home/Contact";
+                String subject = "Thank You for Donating to Code the Way!";
+                String name = facilitiesTechDonor.FirstName + " " + facilitiesTechDonor.LastName;
+                await Email(name, facilitiesTechDonor.Email, text, subject);
+                await AdminEmail(facilitiesTechDonor);
                 return RedirectToAction("Index");
             }
 

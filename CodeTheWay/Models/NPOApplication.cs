@@ -17,7 +17,7 @@ namespace CodeTheWay.Models
         public string OrgName { get; set; }
 
         [EmailAddress]
-        [Required]
+        // [Required] This thing broke your NPO requests for the last 9 months
         public string Email { get; set; }
 
         [DisplayName("Phone Number")]

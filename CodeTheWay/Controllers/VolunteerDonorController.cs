@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
@@ -11,12 +12,11 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
- 
-    public class VolunteerDonorController : Controller
+    [Authorize(Roles = "")]
+    public class VolunteerDonorController : BaseController
     {
         private VolunteerDonorService service = new VolunteerDonorService();
 
-        [Authorize]
         // GET: VolunteerDonor
         public ActionResult Index()
         {
@@ -51,11 +51,16 @@ namespace CodeTheWay.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,Company,Offerings")] VolunteerDonor volunteerDonor)
+        public async Task<ActionResult> Create([Bind(Include = "Id,FirstName,LastName,Email,Company,Offerings")] VolunteerDonor volunteerDonor)
         {
             if (ModelState.IsValid)
             {
                 service.Add(volunteerDonor);
+                String text = "Hello " + volunteerDonor.FirstName + ", <br/><br/> Thank you for applying to help at Code the Way. If you have any questions, please contact us at: www.codetheway.org/Home/Contact";
+                String subject = "Thank You for Signing Up for Code the Way!";
+                String name = volunteerDonor.FirstName + " " + volunteerDonor.LastName;
+                await Email(name, volunteerDonor.Email, text, subject);
+                await AdminEmail(volunteerDonor);
                 return RedirectToAction("Index", "Home");
             }
 

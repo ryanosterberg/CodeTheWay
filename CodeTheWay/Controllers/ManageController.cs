@@ -7,11 +7,14 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CodeTheWay.Models;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using System.Web.Configuration;
 
 namespace CodeTheWay.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -49,9 +52,22 @@ namespace CodeTheWay.Controllers
                 _userManager = value;
             }
         }
+        public async Task Email() //pass in email, subject, text
+        {
+            var apiKey = WebConfigurationManager.AppSettings["SendGridEnvironmentalKey"];
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("22millea1@elmbrookstudents.org", "The Gathering");
+            var subject = "The Gathering Email Confirmation";
+            var to = new EmailAddress("adam@millerfamily.page", "Ryan");
+            var plainTextContent = "You have registered with The Gathering!";
+            var htmlContent = "<strong>You have registered with The Gathering!</strong>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);
+        }
 
         //
         // GET: /Manage/Index
+        [Authorize(Roles = "")]
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =

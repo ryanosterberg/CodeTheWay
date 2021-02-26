@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using CodeTheWay.Models;
@@ -11,12 +12,11 @@ using CodeTheWay.Services;
 
 namespace CodeTheWay.Controllers
 {
-  
-    public class NPOApplicationController : Controller
+    [Authorize(Users = "")]
+    public class NPOApplicationController : BaseController
     {
         private NPOApplicationService service = new NPOApplicationService();
 
-        [Authorize]
         // GET: NPOApplication
         public ActionResult Index()
         {
@@ -51,11 +51,16 @@ namespace CodeTheWay.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Create([Bind(Include = "Id,OrgName,Email,PhoneNum,Address,ApplicantFirstName,ApplicantLastName,ApplicantPosition,ApplicantEmail,ApplicantPhone,NPOMission,NPOVision,WebURL,ProblemsAndDesires")] NPOApplication nPOApplication)
+        public async Task<ActionResult> Create([Bind(Include = "Id,OrgName,ApplicantFirstName,ApplicantLastName,ApplicantPosition,ApplicantEmail,ApplicantPhone,NPOMission,NPOVision,WebURL,ProblemsAndDesires")] NPOApplication nPOApplication)
         {
             if (ModelState.IsValid)
             {
                 service.Add(nPOApplication);
+                String text = "Hello " + nPOApplication.ApplicantFirstName + ", <br/><br/> Thank you for coming to Code the Way. If you have any questions, please contact us at: www.codetheway.org/Home/Contact";
+                String subject = "Thank You for Coming to Code the Way!";
+                String name = nPOApplication.ApplicantFirstName + " " + nPOApplication.ApplicantLastName;
+                await Email(name, nPOApplication.ApplicantEmail, text, subject);
+                await AdminEmail(nPOApplication);
                 return RedirectToAction("Index", "Home");
             }
 
