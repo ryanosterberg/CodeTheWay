@@ -57,7 +57,7 @@ namespace CodeTheWay.Controllers
             {
                 service.Add(volunteerDonor);
                 String text = "Hello " + volunteerDonor.FirstName + ", <br/>Thank you for applying to assist Code the Way as a volunteer.  Your interest, experience, skill set, and availability is extremely important to the success of Code the Way.  A member of the Code the Way team will contact you within the next business week.<br><br>Brad Zepecki<br>b.zepecki@codetheway.org<br>Founder - Code the Way<br>President and Director of Octavian Technology";
-                String subject = "Thank You for Signing Up for Code the Way!";
+                String subject = "Thank You for Applying to help at Code the Way!";
                 String name = volunteerDonor.FirstName + " " + volunteerDonor.LastName;
                 await Email(name, volunteerDonor.Email, text, subject);
                 await AdminEmail(volunteerDonor);

@@ -58,7 +58,7 @@ namespace CodeTheWay.Controllers
             {
                 service.Add(studentApplication);
                 String text = "Hello " + studentApplication.FirstName + ", <br/> Thank you for applying to the Code the Way Student Developer Program 2021.  Confirmation of your acceptance/denial into the program will be sent to your email by May 15th 2021. Feel free to reach out to me with any questions or concerns. <br><br> Mr. O <br>r.osterberg@codetheway.org <br> Educational Director - Code the Way <br> Computer Science Teacher - Brookfield Central High School";
-                String subject = "Thank You for Signing Up for Code the Way!";
+                String subject = "Thank You for Applying to Code the Way!";
                 String name = studentApplication.FirstName + " " + studentApplication.LastName;
                 await Email(name, studentApplication.Email, text, subject);
                 await AdminEmail(studentApplication);
