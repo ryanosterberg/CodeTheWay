@@ -18,17 +18,13 @@ namespace CodeTheWay.Controllers
     public class BaseController : Controller
     {
         private const string from_address = "r.osterberg@codetheway.org"; //Contact Adam Miller if you need to change this while keeping the rest of the SendGrid API stuff
-        private const string admin_Student_Address = "22millea1 @elmbrookstudents.org";
-        // private const string admin_Student_Address = "r.osterberg@sodetheway.org";
+        private const string admin_Student_Address = "r.osterberg@sodetheway.org";
         private const string admin_Student_Name = "Ryan";
-        private const string admin_NPO_Address = "22millea1@elmbrookstudents.org";
-        // private const string admin_NPO_Address = b.zepecki@codetheway.org";
+        private const string admin_NPO_Address = "b.zepecki@codetheway.org";
         private const string admin_NPO_Name = "Brad";
-        private const string admin_Volunteer_Address = "22millea1@elmbrookstudents.org";
-        // private const string admin_Volunteer_Address = "b.zepecki@codetheway.org";
+        private const string admin_Volunteer_Address = "b.zepecki@codetheway.org";
         private const string admin_Volunteer_Name = "Brad";
-        private const string admin_Donor_Address = "22millea1@elmbrookstudents.org";
-        // private const string admin_Donor_Address = "b.zepecki@codetheway.org";
+        private const string admin_Donor_Address = "b.zepecki@codetheway.org";
         private const string admin_Donor_Name = "Brad";
         public async Task Email(String name, String address, String text, String subject)
         {
