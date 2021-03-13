@@ -18,7 +18,7 @@ namespace CodeTheWay.Controllers
     public class BaseController : Controller
     {
         private const string from_address = "r.osterberg@codetheway.org"; //Contact Adam Miller if you need to change this while keeping the rest of the SendGrid API stuff
-        private const string admin_Student_Address = "r.osterberg@sodetheway.org";
+        private const string admin_Student_Address = "r.osterberg@codetheway.org";
         private const string admin_Student_Name = "Ryan";
         private const string admin_NPO_Address = "b.zepecki@codetheway.org";
         private const string admin_NPO_Name = "Brad";
